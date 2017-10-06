@@ -1,23 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
+/*   ft_count_char.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rvelez <rvelez@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/10/02 19:30:18 by rvelez            #+#    #+#             */
-/*   Updated: 2017/10/05 19:38:12 by rvelez           ###   ########.fr       */
+/*   Created: 2017/10/05 18:44:53 by rvelez            #+#    #+#             */
+/*   Updated: 2017/10/05 18:49:32 by rvelez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	ft_lstdelone(t_list **alst, void (*del)(void *, size_t))
+int	ft_count_char(char *str, char c)
 {
-	if (alst && del)
+	int i;
+	int n;
+
+	i = 0;
+	n = 0;
+	while (str[i])
 	{
-		del((*alst)->content, (*alst)->content_size);
-		free(*alst);
-		*alst = NULL;
+		if (str[i] == c)
+			n++;
+		i++;
 	}
+	return (n);
 }

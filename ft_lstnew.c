@@ -6,7 +6,7 @@
 /*   By: rvelez <rvelez@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/02 19:20:08 by rvelez            #+#    #+#             */
-/*   Updated: 2017/10/02 19:29:42 by rvelez           ###   ########.fr       */
+/*   Updated: 2017/10/05 18:37:44 by rvelez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ t_list	*ft_lstnew(void const *content, size_t content_size)
 {
 	t_list	*head;
 
-	if(content == NULL)
+	if (content == NULL)
 	{
 		head->content = NULL;
 		head->content_size = 0;

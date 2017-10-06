@@ -6,7 +6,7 @@
 /*   By: rvelez <rvelez@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/02 19:54:55 by rvelez            #+#    #+#             */
-/*   Updated: 2017/10/02 19:56:49 by rvelez           ###   ########.fr       */
+/*   Updated: 2017/10/05 19:47:08 by rvelez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,11 @@
 
 void	ft_lstadd(t_list **alst, t_list *new)
 {
-	new->next = *alst;
-	*alst = new;
+	if (*alst)
+	{
+		new->next = *alst;
+		*alst = new;
+	}
+	else
+		*alst = new;
 }

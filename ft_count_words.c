@@ -1,23 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
+/*   ft_count_words.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rvelez <rvelez@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/10/02 19:30:18 by rvelez            #+#    #+#             */
-/*   Updated: 2017/10/05 19:38:12 by rvelez           ###   ########.fr       */
+/*   Created: 2017/10/05 18:27:34 by rvelez            #+#    #+#             */
+/*   Updated: 2017/10/05 18:27:36 by rvelez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstdelone(t_list **alst, void (*del)(void *, size_t))
+int		ft_count_words(char *str)
 {
-	if (alst && del)
+	int i;
+	int n;
+	int is_word;
+
+	i = 0;
+	n = 0;
+	is_word = 0;
+	while (str[i])
 	{
-		del((*alst)->content, (*alst)->content_size);
-		free(*alst);
-		*alst = NULL;
+		while (str[i] && str[i] != ' ' && str[i] != '\t' && str[i] != '\n')
+		{
+			is_word = 1;
+			i++;
+		}
+		if (str[i] == ' ' || str[i] == '\t' || str[i] == '\n' || str[i] == '\0')
+		{
+			if (is_word)
+				n++;
+			is_word = 0;
+			i++;
+		}
 	}
+	return (n);
 }
