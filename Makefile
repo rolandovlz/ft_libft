@@ -6,7 +6,7 @@
 #    By: rvelez <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/09/23 19:33:04 by rvelez            #+#    #+#              #
-#    Updated: 2017/10/02 20:20:24 by rvelez           ###   ########.fr        #
+#    Updated: 2017/10/07 19:45:19 by rvelez           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -64,14 +64,20 @@ SRC = ft_memset.c \
 	  ft_putstr_fd.c \
 	  ft_putendl_fd.c \
 	  ft_putnbr_fd.c \
+	  ft_lstnew.c \
+	  ft_lstdelone.c \
+	  ft_lstdel.c \
+	  ft_lstadd.c \
+	  ft_lstiter.c \
+	  ft_count_words.c \
+	  ft_count_char.c \
+	  ft_wordcount_by_delim.c
 
 	  
 
 OBJ = *.o
 
-.PHONY: all compile clean fclean re $(NAME)
-
-all: $(NAME)
+.PHONY: all $(NAME) compile clean fclean re
 
 $(NAME): compile
 	@ar rc $(NAME) $(OBJ)

@@ -1,23 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstmap.c                                        :+:      :+:    :+:   */
+/*   ft_wordcount_by_delim.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rvelez <rvelez@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/10/02 19:59:55 by rvelez            #+#    #+#             */
-/*   Updated: 2017/10/05 23:35:14 by rvelez           ###   ########.fr       */
+/*   Created: 2017/10/07 18:02:26 by rvelez            #+#    #+#             */
+/*   Updated: 2017/10/07 18:48:41 by rvelez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
-t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
+int	ft_wordcount_by_delim(char *str, char c)
 {
-	while (lst != NULL)
+	int count;
+	
+	count = 0;
+	if (!str)
+		return (0);
+	while (*str)
 	{
-		if(!f(lst))
-			return (NULL);
+		if (*str == c)
+			str++;
+		else
+		{
+			if (*(str + 1) == c || *(str + 1) == '\0')
+				count++;
+			str++;
+		}
 	}
-	return (lst);
+	return (count);
 }
