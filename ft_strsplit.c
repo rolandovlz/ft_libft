@@ -1,20 +1,20 @@
-/* **************************************************************************** */
-/*                                                                              */
-/*                                                          :::      ::::::::   */
-/*   ft_strsplit.c                                        :+:      :+:    :+:   */
-/*                                                      +:+ +:+         +:+     */
-/*   By: rolandovlz <rolandovlz@gmail.com>            +#+  +:+       +#+        */
-/*                                                  +#+#+#+#+#+   +#+           */
-/*   Created: 2017/10/08 17:09:08 by rolandovlz          #+#    #+#             */
-/*   Updated: 2017/10/08 17:09:11 by rolandovlz         ###   ########.fr       */
-/*                                                                              */
-/* **************************************************************************** */
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strsplit.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rvelez <rvelez@student.42.us.org>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/10/08 19:43:17 by rvelez            #+#    #+#             */
+/*   Updated: 2017/10/08 20:39:08 by rvelez           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "libft.h"
 
-static int	pos(char const *str, int p, char c)
+static size_t	pos(char const *str, int p, char c)
 {
-	int		length;
+	size_t	length;
 
 	length = 0;
 	while (str[p] && str[p] != c)
@@ -25,33 +25,31 @@ static int	pos(char const *str, int p, char c)
 	return (length);
 }
 
-char		**ft_strsplit(char const *s, char c)
+char			**ft_strsplit(char const *s, char c)
 {
-	int		wordcount;
-	int		i;
-	int		j;
+	int		index[2];
 	int		k;
+	int		wordcount;
 	char	**res;
 
-	i = 0;
-	j = 0;
+	index[0] = 0;
+	index[1] = 0;
 	wordcount = ft_wordcount_by_delim((char *)s, c);
 	if (!(res = (char **)malloc(sizeof(char *) * (wordcount + 1))))
 		return (NULL);
-	while (s[i])
+	while (s[index[0]])
 	{
-		while (s[i] && s[i] == c)
-			i++;
-		if (s[i])
+		while (s[index[0]] && s[index[0]] == c)
+			index[0]++;
+		if (s[index[0]])
 		{
 			k = 0;
-			if (!(res[j] = (char *)malloc(sizeof(char) * (pos(s, i, c) + 1))))
-				return (NULL);
-			while (s[i] && s[i] != c)
-				res[j][k++] = s[i++];
-			res[j++][k] = '\0';
+			res[index[1]] = ft_strnew(pos(s, index[0], c));
+			while (s[index[0]] && s[index[0]] != c)
+				res[index[1]][k++] = s[index[0]++];
+			res[index[1]++][k] = '\0';
 		}
 	}
-	res[j] = NULL;
+	res[index[1]] = NULL;
 	return (res);
 }

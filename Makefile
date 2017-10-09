@@ -6,7 +6,7 @@
 #    By: rvelez <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/09/23 19:33:04 by rvelez            #+#    #+#              #
-#    Updated: 2017/10/08 19:24:14 by rvelez           ###   ########.fr        #
+#    Updated: 2017/10/08 19:38:38 by rvelez           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -79,9 +79,9 @@ SRC = ft_memset.c \
 
 	  
 
-OBJ = *.o
+OBJ = $(SRC:.c=.o)
 
-.PHONY: all $(NAME) compile clean fclean re
+all: $(NAME)
 
 $(NAME): compile
 	@ar rc $(NAME) $(OBJ)
@@ -97,3 +97,5 @@ fclean: clean
 	@/bin/rm $(NAME)
 
 re: fclean all
+
+.PHONY: all compile clean fclean re

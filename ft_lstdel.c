@@ -6,7 +6,7 @@
 /*   By: rvelez <rvelez@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/02 19:44:51 by rvelez            #+#    #+#             */
-/*   Updated: 2017/10/05 19:45:08 by rvelez           ###   ########.fr       */
+/*   Updated: 2017/10/08 19:42:02 by rvelez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,4 @@ void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
 			*alst = NULL;
 			*alst = node;
 		}
-
 }
