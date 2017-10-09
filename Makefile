@@ -1,12 +1,12 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    Makefile                                             :+:      :+:    :+:    #
+#    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: rvelez <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/09/23 19:33:04 by rvelez            #+#    #+#              #
-#    Updated: 2017/10/08 17:35:27 by rolandovlz         ###   ########.fr        #
+#    Updated: 2017/10/08 19:24:14 by rvelez           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -69,7 +69,9 @@ SRC = ft_memset.c \
 	  ft_lstdel.c \
 	  ft_lstadd.c \
 	  ft_lstiter.c \
+	  ft_lstmap.c \
 	  ft_lstsize.c \
+	  ft_lstappend.c \
 	  ft_count_words.c \
 	  ft_count_char.c \
 	  ft_wordcount_by_delim.c \

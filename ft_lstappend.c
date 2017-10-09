@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstmap.c                                        :+:      :+:    :+:   */
+/*   ft_lstappend.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rvelez <rvelez@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/10/02 19:59:55 by rvelez            #+#    #+#             */
-/*   Updated: 2017/10/08 19:24:56 by rvelez           ###   ########.fr       */
+/*   Created: 2017/10/08 19:16:23 by rvelez            #+#    #+#             */
+/*   Updated: 2017/10/08 19:20:25 by rvelez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
+void	ft_lstappend(t_list **head, t_list *fresh_list)
 {
-	t_list *fresh;
+	t_list *node;
 
-	fresh = NULL;
-	if (f)
+	if (*head)
 	{
-		while (lst)
-		{
-			ft_lstappend(&fresh, f(lst));
-			lst = lst->next;
-		}
+		node = *head;
+		while (node->next)
+			node = node->next;
+		node->next = fresh_list;
 	}
-	return (fresh);
+	else
+		*head = fresh_list;
 }
