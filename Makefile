@@ -6,11 +6,15 @@
 #    By: rvelez <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/09/23 19:33:04 by rvelez            #+#    #+#              #
-#    Updated: 2017/10/08 19:38:38 by rvelez           ###   ########.fr        #
+#    Updated: 2017/10/09 00:51:12 by rvelez           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
+
+CC = gcc
+
+CFLAGS = -Wall -Wextra -Werror
 
 SRC = ft_memset.c \
 	  ft_bzero.c \
@@ -83,12 +87,10 @@ OBJ = $(SRC:.c=.o)
 
 all: $(NAME)
 
-$(NAME): compile
+$(NAME):
+	@$(CC) $(CFLAGS) -c $(SRC)
 	@ar rc $(NAME) $(OBJ)
 	@ranlib $(NAME)
-
-compile:
-	@gcc -c $(SRC) -Wall -Werror -Wextra
 
 clean:
 	@/bin/rm -f *.o
@@ -98,4 +100,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all compile clean fclean re
+.PHONY: all clean fclean re
