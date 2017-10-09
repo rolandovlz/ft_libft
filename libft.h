@@ -6,7 +6,7 @@
 /*   By: rvelez <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/23 12:23:23 by rvelez            #+#    #+#             */
-/*   Updated: 2017/10/08 17:06:51 by rolandovlz         ###   ########.fr       */
+/*   Updated: 2017/10/08 17:31:13 by rolandovlz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,8 +77,10 @@ void			ft_lstdel(t_list **alst, void(*del)(void *, size_t));
 void			ft_lstadd(t_list **alst, t_list *new);
 void			ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
+int				ft_lstsize(t_list *head);
 int				ft_count_words(char *str);
 int				ft_count_char(char *str, char c);
 int				ft_wordcount_by_delim(char *str, char c);
+void			ft_putnchar(char c, size_t n);
 
 #endif
