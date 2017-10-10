@@ -6,7 +6,7 @@
 #    By: rvelez <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/09/23 19:33:04 by rvelez            #+#    #+#              #
-#    Updated: 2017/10/09 00:51:12 by rvelez           ###   ########.fr        #
+#    Updated: 2017/10/09 14:39:20 by rvelez           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -93,7 +93,7 @@ $(NAME):
 	@ranlib $(NAME)
 
 clean:
-	@/bin/rm -f *.o
+	@/bin/rm -f $(OBJ)
 
 fclean: clean
 	@/bin/rm $(NAME)
