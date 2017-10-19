@@ -6,12 +6,11 @@
 /*   By: rvelez <rvelez@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/07 18:02:26 by rvelez            #+#    #+#             */
-/*   Updated: 2017/10/08 19:40:33 by rvelez           ###   ########.fr       */
+/*   Updated: 2017/10/13 16:12:23 by rvelez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 int	ft_wordcount_by_delim(char *str, char c)
 {
